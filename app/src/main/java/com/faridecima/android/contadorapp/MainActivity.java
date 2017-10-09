@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CONTADOR ++;
-        mcampoConteo = (EditText) findViewById(R.id.etuqite_conteo);
+        mcampoConteo = (EditText) findViewById(R.id.etiqueta_conteo);
 
         mBotoncontar = (Button) findViewById(R.id.boton_contar);
         mBotoncontar.setOnClickListener(new View.OnClickListener() {
@@ -28,7 +28,13 @@ public class MainActivity extends AppCompatActivity {
                 mcampoConteo.setText(+CONTADOR);
             }
         });
-
-
+        mBotonreiniciar = (Button) findViewById(R.id.boton_reiniciar);
+        mBotoncontar.setOnClickListener(new View.OnClickListener (){
+                      public void onClick(View v) {
+                              CONTADOR = 0;
+            mcampoConteo.setText(+CONTADOR);
+        }
             }
+        );
+    }
 }
